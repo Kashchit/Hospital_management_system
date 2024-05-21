@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Hospital Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/dashboard/style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #contact {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        #contact h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+            letter-spacing: 2px;
+        }
+
+        .contact-left, .contact-right {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .contact-left {
+            border-right: 1px solid #ddd;
+            margin-left: 20px;
+        }
+
+        .contact-right {
+            padding-left: 40px;
+        }
+
+        .contact-left p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #333;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #4CAF50;
+        }
+
+        /* Contact Form */
+        .contact-right form input[type="text"],
+        .contact-right form input[type="email"],
+        .contact-right form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .contact-right form input[type="text"]:focus,
+        .contact-right form input[type="email"]:focus,
+        .contact-right form textarea:focus {
+            border-color:#4CAF50;
+            outline: none;
+        }
+
+        .contact-right form input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-right form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="diff">
+        <div class="container1">
+            <h1>Hospital Management System - Dashboard</h1>
+            <nav class="diffNav">
+                <ul class="diffUl">
+                    <li class="diffLi"><a href="/dashboard" class="diffa">Home</a></li>
+                    <li class="diffLi"><a href="/patients" class="diffa">Patients</a></li>
+                    <li class="diffLi"><a href="/doctors" class="diffa">Doctors</a></li>
+                    <li class="diffLi"><a href="/appointments" class="diffa">Appointments</a></li>
+                    <li class="diffLi"><a href="/contact" class="diffa">Contact Us</a></li>
+                    <li class="diffLi"><a href="/auth/logout" class="diffa">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div id="contact">
+            <h1>Contact Us</h1>
+            <div class="row">
+                <div class="contact-left">
+                    <p><i class="fas fa-envelope"></i> thapakashchitbikram@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 99035039761</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100059783168481" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/thapa_b_kashchit/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/Kashchit" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/kashchit-bikram-thapa-7b7384282/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                        <input type="submit" value="Submit">
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hospital Management System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyUrGIOsv0RY94DsoTsl4BuA3EsrkhX_UYqwXrL3h_ksOqaxI0sbZ2RMTiC1kP1V7Iy/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>

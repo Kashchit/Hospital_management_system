@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/dashboard/style.css">
+</head>
+<body>
+    <header class="diff">
+        <div class="container1">
+            <h1>Hospital Management System - Dashboard</h1>
+            <nav class="diffNav">
+                <ul class="diffUl">
+                    <li class="diffLi"><a href="/dashboard" class="diffa">Home</a></li>
+                    <li class="diffLi"><a href="/patients" class="diffa">Patients</a></li>
+                    <li class="diffLi"><a href="/doctors" class="diffa">Doctors</a></li>
+                    <li class="diffLi"><a href="/appointments" class="diffa">Appointments</a></li>
+                    <li class="diffLi"><a href="/contact" class="diffa">Contact Us</a></li>
+                    <li class="diffLi"><a href="/auth/logout" class="diffa">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1 class="diffC">Patients</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% patients.forEach(patient => { %>
+                <tr>
+                    <td><%= patient.name %></td>
+                    <td><%= patient.age %></td>
+                    <td><%= patient.address %></td>
+                    <td class="action-links">
+                        <a href="/patients/edit/<%= patient.id %>">Edit</a>
+                        <a href="/patients/delete/<%= patient.id %>">Delete</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+   <a href="/patients/add"> <button class="addBtn">Add Patient</button></a>
+</body>
+</html>

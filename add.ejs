@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Patient</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/dashboard/style.css">
+</head>
+<body>
+    <header class="diff">
+        <div class="container">
+            <h1>Hospital Management System - Dashboard</h1>
+            <nav class="diffNav">
+                <ul class="diffUl">
+                    <li class="diffLi"><a href="/dashboard" class="diffa">Home</a></li>
+                    <li class="diffLi"><a href="/patients" class="diffa">Patients</a></li>
+                    <li class="diffLi"><a href="/doctors" class="diffa">Doctors</a></li>
+                    <li class="diffLi"><a href="/appointments" class="diffa">Appointments</a></li>
+                    <li class="diffLi"><a href="/contact" class="diffa">Contact Us</a></li>
+                    <li class="diffLi"><a href="/auth/logout" class="diffa">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <h1 class="diffC">Add Patient</h1>
+    <form action="/patients/add" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="text" name="address" placeholder="Address" required>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

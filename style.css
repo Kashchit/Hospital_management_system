@@ -1,0 +1,223 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.diff {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    margin: 0 auto;
+   
+}
+
+.diffNav .diffUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.diffNav .diffUl .diffLi {
+    display: inline;
+    margin-right: 10px;
+}
+
+.diffNav .diffUl .diffLi .diffa {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.diffNav .diffUl .diffLi .diffa:hover {
+    background-color:  #306332;
+}
+
+.dashboard {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+.carousel-inner{
+    height: 350px;
+}
+
+.img1{
+    display: inline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.addBtn {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #4CAF50; 
+    color: white; 
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 43%;
+}
+
+.addBtn:hover {
+    background-color: #45a049; 
+}
+
+.addBtn a {
+    color: white; 
+    text-decoration: none;
+}
+
+.addBtn a:hover {
+    text-decoration: underline; 
+}
+
+/* popup msg */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    z-index: 9999;
+}
+.popup-message {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.motto{
+    text-align: center;
+    margin-top: 40px;
+}
+.d2{
+    color: rgb(96, 95, 95);
+    text-decoration: underline;
+}
+.d1{
+    font-weight: bolder;
+    font-family: "Poetsen One", sans-serif;
+}
+
+.fs{
+    width: 600px;
+    height: 400px;
+}
+.app{
+    margin-top: 80px;
+}
+.book{
+    font-family: "Poetsen One", sans-serif;
+    font-size: 50px;
+    margin-top: 30px;
+}
+.poetsen-one-regular {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 20px;
+  }
+
+.col-6{
+    margin-top: 30px;
+}
+
+.addBtnn{
+        
+        padding: 10px 16px;
+        background-color: #4CAF50; 
+        color: white; 
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+       
+}
+
+.footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#testimonial{
+    width: 100%;
+    padding: 70px 0;
+}
+.testimonial-row{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.testimonial-col{
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 3px #009688;
+    cursor: pointer;
+    transition: transform .5s;
+}
+.testimonial-col p{
+    font-size: 14px;
+}
+.user{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.user img{
+    width: 40px;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+.user-info .fa{
+    margin-left: 10px;
+    color: #27c0ff;
+    font-size: 20px;
+}
+.user-info small{
+    color: #009688;
+}
+.testimonial-col:hover{
+    transform: translateY(-7px);
+}
+.title-text{
+    margin: 20px auto;
+}
